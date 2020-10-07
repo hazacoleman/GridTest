@@ -1,0 +1,88 @@
+WindowManager:
+    MainWindow:
+    SecondWindow:
+    
+<MainWindow>:
+    
+    name: "main"
+    
+    GridLayout:
+        cols:1
+        
+        GridLayout:
+            cols:2
+        
+           
+           
+                
+                
+                
+            Label:
+                text:"Username: "
+                
+               
+            TextInput:
+                id: Username
+                
+                multiline: False
+                
+                
+            Label:
+                text:"Password: "
+                
+               
+            TextInput:
+                id: Password
+               
+                multiline: False
+                
+                    
+        Button:
+            
+            
+            text: "Submit"
+            on_release: 
+                app.attempt_login(Username.text, Password.text) 
+                root.manager.transition.direction = "left"
+                    
+<SecondWindow>:
+    name: "second"
+    GridLayout:
+        cols:1
+        
+        Label:
+            text:"Welcome Back Master Harry!"
+        
+       
+        
+    
+        Button:
+        
+        
+            text: "Go Back"
+            on_release: 
+                app.root.current = "main"
+                root.manager.transition.direction = "right"
+            
+            
+
+        
+
+<P>:
+    id:pop
+    
+    
+       
+       
+    
+        
+    
+    
+        
+        
+        
+            
+        
+       
+        
+        
